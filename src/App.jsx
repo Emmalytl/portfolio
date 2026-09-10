@@ -8,7 +8,7 @@
 // Edit these values below to be about YOU. This is the only
 // part of the file most people ever need to touch.
 // -------------------------------------------------------------
-const YOUR_NAME = "Emmanuel Peprah Boateng"
+const YOUR_NAME = "Your Name"
 const YOUR_TAGLINE = "Masters student · Cybersecurity & IT support · Software builder"
 
 // Short intro paragraph shown under your name.
@@ -25,9 +25,6 @@ const SKILLS = [
   "Cybersecurity",
   "IT Support",
   "React",
-  "PHP",
-  "HTML",
-  "MYSQL",
   "JavaScript",
   "Supabase",
   "Splunk",
@@ -49,7 +46,7 @@ const PROJECTS = [
       "across software, hardware, networking, and cybersecurity — and staff get " +
       "assigned tickets based on their specialties, not a generic technician role.",
     tech: "HTML, CSS, JavaScript, Supabase (Auth + Row-Level Security)",
-    link: "", // <-- replace with your real repo link
+    link: "https://github.com/your-username/your-repo-name", // <-- replace with your real repo link
   },
   {
     title: "Tidyline",
@@ -80,9 +77,9 @@ const PROJECTS = [
 
 // Your contact links. Delete a line if you don't want to show it.
 const CONTACT = {
-  email: "emmanuelpeprahboateng@gmail.com",
+  email: "you@example.com",
   github: "https://github.com/emmalytl", // double-check this is your actual GitHub username
-  linkedin: "https://www.linkedin.com/in/emmanuel-peprah-boateng-12bb83133",
+  linkedin: "https://linkedin.com/in/your-profile",
 }
 
 // =============================================================
