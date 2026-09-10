@@ -166,7 +166,7 @@ function App() {
         <section className="hero section-wrap">
           <div className="hero-copy">
             <div className="availability"><span /> Open to IT & Cybersecurity opportunities</div>
-            <p className="eyebrow">IT SUPPORT · CYBERSECURITY · SYSTEMS</p>
+            <p className="eyebrow">MASTERS STUDENT . IT SUPPORT · CYBERSECURITY · SYSTEMS</p>
             <h1>Technology that <em>solves problems.</em></h1>
             <p className="hero-lead">I’m <strong>Emmanuel Peprah Boateng</strong>, an IT Support Specialist and cybersecurity-focused technology professional based in Accra. I troubleshoot, secure, support and build practical digital solutions that help people and businesses work better.</p>
             <div className="hero-actions">
