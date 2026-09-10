@@ -1,55 +1,74 @@
 /* =============================================================
    GLOBAL RESET
-   Browsers add their own default spacing/fonts to pages.
-   This section clears that out so we have a clean slate.
    ============================================================= */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* makes width/height math predictable */
+  box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #1a1a1a;         /* near-black text, easier on the eyes than pure black */
-  background: #fafafa;    /* soft off-white background */
-  line-height: 1.6;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1a1d1f;
+  background: #f7f6f2;    /* warm off-white, softer than pure gray */
+  line-height: 1.65;
 }
 
 /* =============================================================
-   COLOR VARIABLES
-   Defining colors once here means if you want to change your
-   accent color later, you only change it in ONE place.
+   COLOR + TYPE VARIABLES
+   One place to change your accent color or fonts later.
    ============================================================= */
 :root {
-  --accent: #0f6e56;        /* deep teal - used for links, pills, highlights */
-  --accent-light: #e1f5ee;  /* pale teal - used for pill backgrounds */
-  --text-secondary: #5f5e5a; /* muted gray for less-important text */
-  --border: #e4e2da;         /* light hairline border color */
+  --ink: #10242b;           /* deep ink-teal - used for headings, avatar */
+  --accent: #0f6e56;        /* teal accent - links, pills, highlights */
+  --accent-light: #e1f5ee;  /* pale teal - pill backgrounds */
+  --text-secondary: #5f6368;
+  --border: #e6e3d8;
+  --card-hover-bg: #ffffff;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
 }
 
 /* =============================================================
    PAGE LAYOUT
-   Single centered column, max width so lines of text
-   don't stretch too wide on big screens.
    ============================================================= */
 .page {
   max-width: 640px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 6rem;
+  padding: 4.5rem 1.5rem 6rem;
 }
 
 /* =============================================================
    HEADER
+   The avatar circle gives the page an anchor point instead of
+   starting cold with plain text - a small, deliberate detail.
    ============================================================= */
 .header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #f7f6f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.1rem;
 }
 
 .name {
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
 }
 
 .tagline {
@@ -61,75 +80,89 @@ body {
    ABOUT SECTION
    ============================================================= */
 .about {
-  margin-bottom: 2rem;
-  font-size: 1rem;
+  margin-bottom: 2.25rem;
+  font-size: 1.02rem;
+  max-width: 34rem;
 }
 
 /* =============================================================
    SKILLS SECTION
-   "flex-wrap: wrap" lets the pills flow onto multiple lines
-   automatically if they don't all fit on one row.
    ============================================================= */
 .skills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .skill-pill {
   font-size: 0.8rem;
-  padding: 4px 12px;
-  border-radius: 6px;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 20px; /* fully rounded pill, distinct from the cards below */
   background: var(--accent-light);
   color: var(--accent);
 }
 
 /* =============================================================
-   SECTION HEADINGS ("Projects", "Contact")
+   SECTION HEADINGS
    ============================================================= */
 .section-heading {
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--text-secondary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 /* =============================================================
    PROJECTS
-   Each project sits in its own block with a top border
-   to visually separate it from the one before it.
+   Each project is now a subtle card that lifts slightly on
+   hover - one deliberate moment of motion, not scattered
+   effects everywhere.
    ============================================================= */
 .projects {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .project-item {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
+  padding: 1.4rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
-.project-item:first-of-type {
-  border-top: none; /* the very first project doesn't need a top line */
+.project-item:hover {
+  background: var(--card-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(16, 36, 43, 0.08);
 }
 
 .project-title {
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
 }
 
 .project-description {
   font-size: 0.95rem;
   color: #333;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .project-tech {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
 }
 
 .project-link {
@@ -150,6 +183,7 @@ body {
   display: flex;
   gap: 1.25rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .contact-links a {
@@ -163,12 +197,19 @@ body {
   text-decoration: underline;
 }
 
+.contact-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 /* =============================================================
    MOBILE RESPONSIVENESS
-   On small screens, reduce the outer padding a bit.
    ============================================================= */
 @media (max-width: 480px) {
   .page {
-    padding: 2.5rem 1.25rem 4rem;
+    padding: 3rem 1.25rem 4rem;
+  }
+  .name {
+    font-size: 1.65rem;
   }
 }

@@ -8,8 +8,12 @@
 // Edit these values below to be about YOU. This is the only
 // part of the file most people ever need to touch.
 // -------------------------------------------------------------
-const YOUR_NAME = "Your Name"
+const YOUR_NAME = "Emmanuel Peprah Boateng"
 const YOUR_TAGLINE = "Masters student · Cybersecurity & IT support · Software builder"
+
+// Your initials, shown in the small avatar circle in the header.
+// Edit this if your name changes.
+const INITIALS = "EB"
 
 // Short intro paragraph shown under your name.
 // Keep it to 2-3 sentences. Write like you're introducing
@@ -77,9 +81,11 @@ const PROJECTS = [
 
 // Your contact links. Delete a line if you don't want to show it.
 const CONTACT = {
-  email: "you@example.com",
-  github: "https://github.com/emmalytl", // double-check this is your actual GitHub username
-  linkedin: "https://linkedin.com/in/your-profile",
+  email: "emmanuelpeprahboateng@gmail.com",
+  github: "https://github.com/Emmalytl",
+  linkedin: "https://www.linkedin.com/in/emmanuel-peprah-boateng-12bb83133",
+  // Two phone numbers - shown as plain text, not clickable links.
+  phone: "+233 24 063 9070 / +233 20 373 5372",
 }
 
 // =============================================================
@@ -114,6 +120,8 @@ function App() {
     <div className="page">
       {/* ---------- HEADER SECTION ---------- */}
       <header className="header">
+        {/* A simple circle with your initials in it - a stand-in for a photo */}
+        <div className="avatar">{INITIALS}</div>
         <h1 className="name">{YOUR_NAME}</h1>
         <p className="tagline">{YOUR_TAGLINE}</p>
       </header>
@@ -155,6 +163,8 @@ function App() {
           <a href={CONTACT.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
           </a>
+          {/* Phone numbers as plain text - not a clickable link */}
+          <span className="contact-text">{CONTACT.phone}</span>
         </div>
       </footer>
     </div>
