@@ -80,9 +80,9 @@ const PROJECTS = [
 
 // Your contact links. Delete a line if you don't want to show it.
 const CONTACT = {
-  email: "you@example.com",
+  email: "emmanuelpeprahboateng@gmail.com",
   github: "https://github.com/emmalytl", // double-check this is your actual GitHub username
-  linkedin: "https://linkedin.com/in/your-profile",
+  linkedin: "https://www.linkedin.com/in/emmanuel-peprah-boateng-12bb83133",
 }
 
 // =============================================================
