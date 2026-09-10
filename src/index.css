@@ -1,0 +1,174 @@
+/* =============================================================
+   GLOBAL RESET
+   Browsers add their own default spacing/fonts to pages.
+   This section clears that out so we have a clean slate.
+   ============================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* makes width/height math predictable */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1a1a1a;         /* near-black text, easier on the eyes than pure black */
+  background: #fafafa;    /* soft off-white background */
+  line-height: 1.6;
+}
+
+/* =============================================================
+   COLOR VARIABLES
+   Defining colors once here means if you want to change your
+   accent color later, you only change it in ONE place.
+   ============================================================= */
+:root {
+  --accent: #0f6e56;        /* deep teal - used for links, pills, highlights */
+  --accent-light: #e1f5ee;  /* pale teal - used for pill backgrounds */
+  --text-secondary: #5f5e5a; /* muted gray for less-important text */
+  --border: #e4e2da;         /* light hairline border color */
+}
+
+/* =============================================================
+   PAGE LAYOUT
+   Single centered column, max width so lines of text
+   don't stretch too wide on big screens.
+   ============================================================= */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+/* =============================================================
+   HEADER
+   ============================================================= */
+.header {
+  margin-bottom: 2rem;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* =============================================================
+   ABOUT SECTION
+   ============================================================= */
+.about {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* =============================================================
+   SKILLS SECTION
+   "flex-wrap: wrap" lets the pills flow onto multiple lines
+   automatically if they don't all fit on one row.
+   ============================================================= */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 3rem;
+}
+
+.skill-pill {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* =============================================================
+   SECTION HEADINGS ("Projects", "Contact")
+   ============================================================= */
+.section-heading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* =============================================================
+   PROJECTS
+   Each project sits in its own block with a top border
+   to visually separate it from the one before it.
+   ============================================================= */
+.projects {
+  margin-bottom: 3rem;
+}
+
+.project-item {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.project-item:first-of-type {
+  border-top: none; /* the very first project doesn't need a top line */
+}
+
+.project-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.project-tech {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.project-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* =============================================================
+   CONTACT / FOOTER
+   ============================================================= */
+.contact-links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================================
+   MOBILE RESPONSIVENESS
+   On small screens, reduce the outer padding a bit.
+   ============================================================= */
+@media (max-width: 480px) {
+  .page {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+}
