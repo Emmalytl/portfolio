@@ -8,7 +8,7 @@
 // Edit these values below to be about YOU. This is the only
 // part of the file most people ever need to touch.
 // -------------------------------------------------------------
-const YOUR_NAME = "Your Name"
+const YOUR_NAME = "Emmanuel Peprah Boateng"
 const YOUR_TAGLINE = "Masters student · Cybersecurity & IT support · Software builder"
 
 // Short intro paragraph shown under your name.
@@ -49,7 +49,7 @@ const PROJECTS = [
       "across software, hardware, networking, and cybersecurity — and staff get " +
       "assigned tickets based on their specialties, not a generic technician role.",
     tech: "HTML, CSS, JavaScript, Supabase (Auth + Row-Level Security)",
-    link: "https://github.com/your-username/your-repo-name", // <-- replace with your real repo link
+    link: "", // <-- replace with your real repo link
   },
   {
     title: "Tidyline",
