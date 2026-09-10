@@ -24,12 +24,11 @@ const YOUR_TAGLINE = "Masters student · Cybersecurity & IT support · Software 
 const SHOW_STATUS_BADGE = true
 const STATUS_TEXT = "Open to opportunities"
 
-// Link to your resume/CV file. If you don't have one hosted yet,
-// leave this as an empty string "" and the button will hide itself.
-// Easiest option: upload a PDF to your GitHub repo (e.g. as
-// "resume.pdf" in the public/ folder) and link to it, or use a
-// Google Drive "anyone with the link can view" share link.
-const RESUME_URL = ""
+// Link to your resume/CV file. Since your CV lives in the public/
+// folder (public/Emmanuel_Peprah_Boateng_CV.pdf), Vite serves it
+// as-is at this exact path once deployed. If you ever replace the
+// file, just keep the same filename, or update this path to match.
+const RESUME_URL = "/Emmanuel_Peprah_Boateng_CV.pdf"
 
 // Short intro paragraph shown under your name.
 // Keep it to 2-3 sentences. Write like you're introducing
@@ -101,7 +100,63 @@ const PROJECTS = [
   },
 ]
 
-// Your contact links. Delete a line if you don't want to show it.
+// -------------------------------------------------------------
+// STEP 2.5: YOUR WORK EXPERIENCE
+// Most recent first. Edit freely - add, remove, or reorder entries.
+// -------------------------------------------------------------
+const EXPERIENCE = [
+  {
+    role: "IT Support Specialist & Customer Service Agent",
+    company: "Concentrix — Accra",
+    period: "Jan 2024 – Present",
+    description:
+      "Providing enterprise-level technical and customer support to business owners on Google Business Profile — resolving account access, identity verification, and security-related issues.",
+  },
+  {
+    role: "System & Data Entry Clerk",
+    company: "Ghana Cocoa Board — Accra",
+    period: "Jan 2021 – Dec 2023",
+    description:
+      "Managed farmers' biodata and issued cocoa cards while maintaining confidentiality, and conducted data analysis to support operational decisions.",
+  },
+  {
+    role: "Information Security & Support Technician",
+    company: "I-AKROTECH Company Ltd — Kumasi",
+    period: "Mar 2019 – Apr 2023",
+    description:
+      "Secured company systems through vulnerability assessments and penetration testing, led incident response efforts, and trained staff on cybersecurity best practices.",
+  },
+  {
+    role: "IT Support & Data Entry Clerk",
+    company: "National Identification Authority — Accra",
+    period: "May 2019 – Dec 2020",
+    description:
+      "Operated biometric enrollment systems, verified identification documents, and performed hardware maintenance on mobile workstations.",
+  },
+  {
+    role: "National Service — IT Technician & Security Support",
+    company: "Inspired Technology Consult — Sunyani",
+    period: "Sep 2017 – Aug 2018",
+    description:
+      "Provided first-line technical support across Windows and Linux systems, managed LAN/WAN and DNS/DHCP troubleshooting, and supported patch deployments.",
+  },
+]
+
+// Your education and certifications.
+const EDUCATION = "Bachelor of Science, Computer Science — Christian Service University College (2017)"
+
+const CERTIFICATIONS = [
+  "Microsoft Certified: Security Operations Analyst",
+  "Certified Security Awareness 1 (Mile2)",
+  "Diploma in Project Management (IBMI – Berlin)",
+  "Information Systems Security (Alison)",
+  "Diploma in IT Support Technician (Alison)",
+  "IT Management – Software & Databases (Alison)",
+  "Google IT Support (in progress)",
+  "CompTIA A+ (in progress)",
+]
+
+
 const CONTACT = {
   email: "emmanuelpeprahboateng@gmail.com",
   github: "https://github.com/Emmalytl",
@@ -118,6 +173,7 @@ const CONTACT = {
 // -------------------------------------------------------------
 const NAV_LINKS = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ]
@@ -151,6 +207,22 @@ function ProjectItem({ title, description, tech, link, image }) {
           </a>
         )}
       </div>
+    </div>
+  )
+}
+
+// A small reusable component for one work experience entry.
+function ExperienceItem({ role, company, period, description }) {
+  return (
+    <div className="experience-item">
+      <div className="experience-header">
+        <div>
+          <h3 className="experience-role">{role}</h3>
+          <p className="experience-company">{company}</p>
+        </div>
+        <span className="experience-period">{period}</span>
+      </div>
+      <p className="experience-description">{description}</p>
     </div>
   )
 }
@@ -207,6 +279,30 @@ function App() {
               {skill}
             </span>
           ))}
+        </section>
+
+        {/* ---------- EXPERIENCE SECTION ---------- */}
+        <section className="experience" id="experience">
+          <h2 className="section-heading">Experience</h2>
+          {/* .map() loops through EXPERIENCE and renders one
+              ExperienceItem component per job */}
+          {EXPERIENCE.map((job) => (
+            <ExperienceItem key={job.role + job.company} {...job} />
+          ))}
+
+          <div className="edu-cert-block">
+            <p className="edu-cert-label">Education</p>
+            <p className="edu-cert-text">{EDUCATION}</p>
+          </div>
+
+          <div className="edu-cert-block">
+            <p className="edu-cert-label">Certifications</p>
+            <ul className="cert-list">
+              {CERTIFICATIONS.map((cert) => (
+                <li key={cert}>{cert}</li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         {/* ---------- PROJECTS SECTION ---------- */}
